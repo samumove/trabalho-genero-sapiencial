@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gênero Literário Sapiencial - Exploração Interativa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        /* Custom colors based on SVG logo */
+        .text-brand-primary { color: #5b4be0; } /* Main text/fill color from logo */
+        .text-brand-secondary { color: #25ace1; } /* Light blue from logo gradient - now used for secondary text */
+        .bg-brand-accent { background-color: #25ace1; } /* Light blue from logo gradient - used for accent background */
+        .hover\:bg-brand-accent-light:hover { background-color: #66d8f5; } /* Lighter blue for hover */
+        .border-brand-secondary { border-color: #25ace1; } /* Light blue for borders */
+        /* Using CSS variables for consistency, fallback to direct hex if needed */
+        :root {
+            --active-nav-bg: #25ace1;
+            --collapsible-border-color: #25ace1; /* Changed to match the new text-brand-secondary */
+        }
+
+        .nav-link.active {
+            background-color: var(--active-nav-bg);
+            color: white;
+        }
+        .nav-link {
+            transition: background-color 0.3s ease;
+        }
+        .collapsible-content {
+            display: none;
+            padding-left: 1rem;
+            border-left: 2px solid var(--collapsible-border-color);
+            margin-left: 0.5rem;
+        }
+        .collapsible-trigger::after {
+            content: ' ▼';
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+        .collapsible-trigger.open::after {
+            transform: rotate(180deg);
+        }
+        h3 {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-stone-100 text-stone-800">
+    <div class="container mx-auto p-4 sm:p-6 md:p-8 max-w-5xl">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl sm:text-4xl font-bold text-brand-primary">Gênero Literário Sapiencial</h1>
+            <p class="text-stone-600 mt-2">Uma exploração interativa do trabalho acadêmico.</p>
+        </header>
+
+        <nav class="bg-stone-200 p-2 rounded-lg shadow-md mb-8">
+            <ul class="flex flex-wrap justify-center gap-2">
+                <li><button data-tab="definicao" class="nav-link active text-sm sm:text-base px-3 py-2 sm:px-4 sm:py-2 rounded-md bg-brand-accent hover:bg-brand-accent-light text-white">1. Definição e Estrutura</button></li>
+                <li><button data-tab="importancia" class="nav-link text-sm sm:text-base px-3 py-2 sm:px-4 sm:py-2 rounded-md hover:bg-brand-accent-light hover:text-white">2. Importância Hermenêutica</button></li>
+                <li><button data-tab="elementos" class="nav-link text-sm sm:text-base px-3 py-2 sm:px-4 sm:py-2 rounded-md hover:bg-brand-accent-light hover:text-white">3. Elementos Essenciais</button></li>
+                <li><button data-tab="principios" class="nav-link text-sm sm:text-base px-3 py-2 sm:px-4 sm:py-2 rounded-md hover:bg-brand-accent-light hover:text-white">4. Princípios de Leitura</button></li>
+                <li><button data-tab="analise" class="nav-link text-sm sm:text-base px-3 py-2 sm:px-4 sm:py-2 rounded-md hover:bg-brand-accent-light hover:text-white">5. Análise Exegética</button></li>
+                <li><button data-tab="aplicacao" class="nav-link text-sm sm:text-base px-3 py-2 sm:px-4 sm:py-2 rounded-md hover:bg-brand-accent-light hover:text-white">6. Aplicação Contemporânea</button></li>
+                <li><button data-tab="batepapo" class="nav-link text-sm sm:text-base px-3 py-2 sm:px-4 sm:py-2 rounded-md hover:bg-brand-accent-light hover:text-white">7. Bate-papo: Sabedoria na Prática</button></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="definicao" class="tab-content active bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-semibold text-brand-primary mb-4">1. Definição e Estrutura do Gênero Escolhido</h2>
+                <p class="mb-4 text-stone-700">Esta seção explora o que é o gênero sapiencial, suas características fundamentais, os livros bíblicos onde ele é proeminente e sua conexão com a revelação progressiva de Deus. O objetivo é fornecer uma base sólida para a compreensão deste importante gênero literário.</p>
+                
+                <div class="mb-3">
+                    <h3 class="collapsible-trigger text-xl font-medium text-brand-secondary mb-2">Definição</h3>
+                    <div class="collapsible-content space-y-2">
+                        <p>A sabedoria bíblica é definida como "viver a vida no mundo de Deus pelas leis de Deus". O tema central não é a vida secular, mas "o temor a Deus" (Pv 1.7; 9.10; Jó 28.28; cf. Sl 111.10; Ec 12.13) e suas implicações para a vida diária. É um padrão teológico de pensamento que aplica a sabedoria de Deus às questões práticas da vida.</p>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <h3 class="collapsible-trigger text-xl font-medium text-brand-secondary mb-2">Principais Características Literárias, Estruturais e Teológicas</h3>
+                    <div class="collapsible-content space-y-3">
+                        <p><strong>Orientação Prática:</strong> É a característica básica do pensamento sapiencial. Provérbios e ditados ajudam o jovem a assumir seu lugar na sociedade, transmitindo a "sabedoria" do passado. Os tópicos incluem comportamento (Pv 29.20), autocontrole (Pv 25.28), relações familiares (Pv 10.1), riqueza material (Pv 11.4; 10.22), o sofrimento do justo (Jó) e a prosperidade do mal (Sl 49; 73).</p>
+                        <p><strong>Dependência de Deus:</strong> A sabedoria é completamente "javista". O temor do SENHOR é o princípio da sabedoria (Pv 9.10). Deus é visto como soberano (Pv 16.4, 9), onipotente (Jó 38.31-33), onisciente (Pv 15.3), Criador (Pv 14.31) e Juiz (Pv 15.11). A sabedoria é identificada com a Torá (Pv 3.1-12) e personificada (Pv 8.29-30).</p>
+                        <p><strong>Autoridade Indireta:</strong> A autoridade divina é pressuposta. Deriva da "verdade intrínseca" da declaração. Deus, tradição e experiência contribuem para essa autoridade (Pv 2.6-8).</p>
+                        <p><strong>Teologia da Criação:</strong> Ênfase na criação (Jó 38). O princípio da recompensa rege o universo: Deus recompensa o piedoso e castiga o ímpio (Pv 11.21). Defesa da justiça divina, mesmo diante do mal e sofrimento do inocente.</p>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <h3 class="collapsible-trigger text-xl font-medium text-brand-secondary mb-2">Livros Bíblicos</h3>
+                    <div class="collapsible-content">
+                        <p>Os livros do Antigo Testamento classificados como literatura sapiencial são Jó, Provérbios e Eclesiastes. O texto também acrescenta os livros apócrifos: Eclesiástico e Sabedoria de Salomão.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="collapsible-trigger text-xl font-medium text-brand-secondary mb-2">Relação com a Revelação Progressiva de Deus</h3>
+                    <div class="collapsible-content">
+                        <p>A literatura sapiencial é valiosa para o cristão. Jesus e a igreja primitiva a reconheceram. O Novo Testamento contém temas sapienciais (Mt 5.21-48; Rm 12; Tg 1-3; Ef 5.22-6.9). A sabedoria do NT é semelhante à do AT e deve ser interpretada com os mesmos critérios.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="importancia" class="tab-content bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-semibold text-brand-primary mb-4">2. A Importância Hermenêutica do Gênero</h2>
+                <p class="mb-4 text-stone-700">Esta seção aborda por que o gênero sapiencial requer uma abordagem de leitura distinta, as armadilhas interpretativas comuns que podem surgir e como ele revela aspectos singulares da vontade e do caráter de Deus. Compreender esses pontos é crucial para uma interpretação fiel.</p>
+
+                <div class="mb-3">
+                    <h3 class="collapsible-trigger text-xl font-medium text-brand-secondary mb-2">Por que esse gênero não pode ser lido como os demais?</h3>
+                    <div class="collapsible-content space-y-2">
+                        <ul class="list-disc list-inside">
+                            <li>As declarações sapienciais não são sempre mandamentos absolutos; são afirmações genéricas que aconselham.</li>
+                            <li>Muitas declarações usam hipérboles (exageros) para enfatizar uma verdade.</li>
+                            <li>Passagens obscuras dependem de costumes antigos e precisam de transculturação.</li>
+                            <li>Sua natureza pragmática pode levar a um mau uso para defender um estilo de vida focado no secularismo.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <h3 class="collapsible-trigger text-xl font-medium text-brand-secondary mb-2">Quais são as armadilhas interpretativas comuns?</h3>
+                    <div class="collapsible-content space-y-2">
+                        <p><strong>Descontextualização e Leitura Literal Indevida:</strong> Ex: Pv 10.22 (bênção material) ou Pv 1.8 (obediência aos pais) tomados como promessas absolutas ou ordens inquestionáveis, ignorando o contexto maior e outros ensinos bíblicos (At 4.19).</p>
+                        <p><strong>Definição Incorreta de Termos Sapienciais:</strong> Ex: "Insensato" (Pv 14.7) interpretado como inculto, em vez de pagão incrédulo.</p>
+                        <p><strong>Não Percepção da Linha de Raciocínio:</strong> Aplicar algo que o texto condena. Ex: Jó 15.20-22 (infelicidade dos perversos) como uma verdade universal, ignorando a refutação de Jó (Jó 17.1-16).</p>
+                        <p><strong>Tomar Metáforas Literalmente:</strong> Ex: Pv 15.25 ("destrói a casa dos soberbos") interpretado literalmente, em vez de um princípio geral da justiça divina (cf. Mt 5.3-4).</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="collapsible-trigger text-xl font-medium text-brand-secondary mb-2">Como esse gênero revela aspectos únicos da vontade e do caráter de Deus?</h3>
+                    <div class="collapsible-content space-y-2">
+                        <ul class="list-disc list-inside">
+                            <li>Revela Deus como o Criador que estabeleceu ordem no mundo.</li>
+                            <li>Mostra Deus como Juiz que recompensa o justo e castiga o ímpio.</li>
+                            <li>Demonstra que a justiça de Deus transcende a fragilidade humana; devemos esperar em Suas respostas.</li>
+                            <li>Enfatiza a dependência de Deus como fonte de sabedoria e a centralidade do temor a Ele.</li>
+                            <li>Revela a presença divina na vida prática.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="elementos" class="tab-content bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-semibold text-brand-primary mb-4">3. Elementos Essenciais para a Interpretação Adequada</h2>
+                <p class="mb-4 text-stone-700">Para interpretar corretamente o gênero sapiencial, é vital fazer as perguntas certas, utilizar os recursos hermenêuticos apropriados e estar ciente de como evitar leituras subjetivas. Esta seção detalha esses elementos.</p>
+
+                <div class="mb-3">
+                     <h3 class="collapsible-trigger text-xl font-medium text-brand-secondary mb-2">Que tipo de perguntas exegéticas e contextuais o leitor deve se fazer?</h3>
+                    <div class="collapsible-content space-y-2">
+                        <ul class="list-disc list-inside">
+                            <li>Qual é o aspecto formal do ditado (provérbio, alegoria, diálogo)?</li>
+                            <li>O contexto imediato e mais amplo é importante (Ex: Pv 1-9 vs. Pv 10-29)?</li>
+                            <li>Há uso de hipérbole?</li>
+                            <li>O ditado se baseia em costumes antigos que precisam ser transculturados?</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <h3 class="collapsible-trigger text-xl font-medium text-brand-secondary mb-2">Que recursos hermenêuticos são mais úteis?</h3>
+                    <div class="collapsible-content space-y-2">
+                        <ul class="list-disc list-inside">
+                            <li><strong>Contexto Histórico:</strong> Para entender costumes antigos.</li>
+                            <li><strong>Paralelos Literários:</strong> Comparar com declarações semelhantes.</li>
+                            <li><strong>Crítica de Formas:</strong> Identificar subgêneros (provérbio, enigma, admoestação, etc.).</li>
+                            <li><strong>Análise de Metáforas:</strong> Determinar a realidade por trás da imagem.</li>
+                            <li><strong>Epílogo de Eclesiastes (Ec 12.9-14):</strong> Chave para entender o livro.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="collapsible-trigger text-xl font-medium text-brand-secondary mb-2">Como evitar a leitura subjetiva ou anacrônica?</h3>
+                    <div class="collapsible-content space-y-2">
+                        <ul class="list-disc list-inside">
+                            <li>Usar ferramentas exegéticas para averiguar o significado original.</li>
+                            <li>Evitar aplicar declarações ao acaso, sem considerar o que elas não dizem.</li>
+                            <li>Reconhecer a natureza geral das declarações e aplicá-las por analogia.</li>
+                            <li>Evitar o "titanismo" (arrogar-se o direito de determinar as leis da ordem criada por Deus).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="principios" class="tab-content bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-semibold text-brand-primary mb-4">4. Princípios de Leitura e Interpretação</h2>
+                <p class="mb-4 text-stone-700">Esta seção apresenta regras específicas para a leitura do gênero sapiencial, baseadas em fontes confiáveis, cita autores relevantes e reflete sobre o papel do gênero na unidade teológica da Bíblia. Seguir estes princípios ajuda a uma interpretação mais acurada.</p>
+
+                <div class="mb-3">
+                    <h3 class="collapsible-trigger text-xl font-medium text-brand-secondary mb-2">Regras Específicas de Leitura</h3>
+                    <div class="collapsible-content space-y-2">
+                        <ul class="list-disc list-inside">
+                            <li>Não ler na declaração proverbial nada além do que ela afirma; são conselhos genéricos.</li>
+                            <li>Sucesso/prosperidade devem ser entendidos primeiro em afinidade com a vontade divina (Js 1.8; Sl 1.3).</li>
+                            <li>Ditados de experiência são observações, não regras fixas (Pv 11.24; 17.28).</li>
+                            <li>Provérbios são aforísticos, priorizando a retórica sobre a precisão; busque a verdade mais profunda (Pv 22.26-27).</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <h3 class="collapsible-trigger text-xl font-medium text-brand-secondary mb-2">Autores e Insights Relevantes</h3>
+                    <div class="collapsible-content space-y-2">
+                        <p><strong>Gordon Fee e Douglas Stuart (2003):</strong> Alertam sobre o mau uso dos livros sapienciais (descontextualização, definição incorreta de termos, não percepção do argumento). Provérbios não são "garantias divinas".</p>
+                        <p><strong>David Hubbard (1982):</strong> Sabedoria foca no indivíduo, profetas na nação.</p>
+                        <p><strong>Ronald Murphy (1996):</strong> Não há unidade lógica total nos conjuntos de provérbios. Resume Eclesiastes (vaidade, alegria atenuada, crítica à sabedoria, temor a Deus, inversão justo/ímpio, Deus incompreensível).</p>
+                        <p><strong>Philip Nel (1982):</strong> O temor do Senhor é a "base" da sabedoria israelita.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="collapsible-trigger text-xl font-medium text-brand-secondary mb-2">Papel do Gênero na Unidade Teológica da Bíblia</h3>
+                    <div class="collapsible-content space-y-2">
+                        <ul class="list-disc list-inside">
+                            <li>A sabedoria no AT e NT é semelhante e deve ser interpretada com critérios parecidos.</li>
+                            <li>Complementa a revelação divina ao abordar questões práticas da vida diária.</li>
+                            <li>Eclesiastes, apesar da perspectiva secular, conclui com a importância de temer a Deus (Ec 12.13).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="analise" class="tab-content bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-semibold text-brand-primary mb-4">5. Análise Exegética de um Texto Representativo</h2>
+                <p class="mb-4 text-stone-700">Aqui, aplicamos os princípios discutidos a um texto específico do gênero sapiencial, Provérbios 13.24. A análise observa a estrutura literária, contexto histórico, intenção original e como podemos aplicá-lo de forma segura hoje.</p>
+
+                <h3 class="text-xl font-medium text-brand-secondary mb-2">Provérbios 13.24</h3>
+                <blockquote class="border-l-4 border-brand-secondary pl-4 italic text-stone-600 mb-3">
+                    "O que retém a vara aborrece a seu filho, mas o que o ama, cedo, o disciplina."
+                </blockquote>
+
+                <div class="mb-3">
+                    <h4 class="collapsible-trigger font-semibold text-brand-secondary mb-1">Estrutura Literária</h4>
+                    <div class="collapsible-content">
+                        <p>Provérbio antitético, contrastando duas ideias para realçar a verdade.</p>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <h4 class="collapsible-trigger font-semibold text-brand-secondary mb-1">Contexto Histórico</h4>
+                    <div class="collapsible-content">
+                        <p>Inserido em Provérbios. O contexto do capítulo 13 é positivo, focando no filho sábio que segue a disciplina do pai (Pv 13.1). A "vara" refere-se à disciplina cuidadosa, não à agressão.</p>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <h4 class="collapsible-trigger font-semibold text-brand-secondary mb-1">Intenção Original</h4>
+                    <div class="collapsible-content">
+                        <p>Enfatizar a importância da disciplina positiva como parte do cuidado e amor na criação, dentro do padrão de "criar um filho 'na disciplina e instrução do Senhor'" (Ef 6.4). A falta de disciplina demonstra falta de amor/cuidado.</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="collapsible-trigger font-semibold text-brand-secondary mb-1">Aplicação Segura</h4>
+                    <div class="collapsible-content">
+                        <p>Enfatiza a responsabilidade dos pais em prover disciplina e instrução como expressão de amor. A disciplina deve ser cuidadosa, visando ao bem do filho, em um contexto de amor e orientação, não de violência. Convite à prática parental ativa e responsável.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="aplicacao" class="tab-content bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-semibold text-brand-primary mb-4">6. Aplicação Contemporânea e Pastoral</h2>
+                <p class="mb-4 text-stone-700">Finalmente, esta seção explora o que o gênero sapiencial comunica à Igreja hoje, como ele molda a espiritualidade, a ética e a missão cristã, e oferece exemplos de como pode ser ensinado ou pregado com fidelidade e relevância no contexto atual.</p>
+
+                <div class="mb-3">
+                    <h3 class="collapsible-trigger text-xl font-medium text-brand-secondary mb-2">O que esse gênero comunica à Igreja de hoje?</h3>
+                    <div class="collapsible-content space-y-2">
+                        <ul class="list-disc list-inside">
+                            <li><strong>Relevância Prática:</strong> Orientação para questões da vida diária.</li>
+                            <li><strong>Centralidade do Temor a Deus:</strong> Verdadeira sabedoria e vida plena vêm do temor a Deus.</li>
+                            <li><strong>Responsabilidade Pessoal e Ética:</strong> Importância do autocontrole, comportamento adequado, relações saudáveis.</li>
+                            <li><strong>Lidar com Sofrimento e Injustiça:</strong> Perspectiva sobre a justiça divina transcendente (Sl 73.18-20).</li>
+                            <li><strong>Crítica à Sociedade Secular:</strong> Eclesiastes demonstra a futilidade da vida sem Deus.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <h3 class="collapsible-trigger text-xl font-medium text-brand-secondary mb-2">Como ele forma a espiritualidade, a ética e a missão cristã?</h3>
+                    <div class="collapsible-content space-y-2">
+                        <p><strong>Espiritualidade:</strong> Incentiva uma espiritualidade prática, com dependência de Deus em todas as esferas. Promove humildade.</p>
+                        <p><strong>Ética:</strong> Molda uma ética baseada no temor ao Senhor, conduta santa e rejeição ao mal (Rm 12; Tg 1-3).</p>
+                        <p><strong>Missão Cristã:</strong> A vida piedosa e a aplicação da sabedoria divina servem como testemunho, sendo sal e luz.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="collapsible-trigger text-xl font-medium text-brand-secondary mb-2">Exemplos de como esse gênero pode ser ensinado ou pregado</h3>
+                    <div class="collapsible-content space-y-2">
+                        <ul class="list-disc list-inside">
+                            <li>Sermões sobre o Temor do Senhor (Pv 1.7; Ec 12.13).</li>
+                            <li>Sermões sobre Dinheiro e Riqueza (Pv 11.4; Ec 5.11-15).</li>
+                            <li>Sermões sobre Relacionamentos Familiares (Pv 10.1).</li>
+                            <li>Sermões sobre o Sofrimento (Jó; Eclesiastes).</li>
+                            <li>Uso como Textos Auxiliares para ancorar aplicações de outros textos.</li>
+                            <li>Confronto com Ideologias Mundanas usando Eclesiastes (ex: críticas de H. Fairlie, C. Lasch).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="batepapo" class="tab-content bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-semibold text-brand-primary mb-4">7. Bate-papo: Sabedoria na Prática</h2>
+                <p class="mb-4 text-stone-700">Esta seção oferece um espaço para ouvir sobre a sabedoria na prática, conectando os ensinamentos sapienciais a discussões e reflexões contemporâneas. Utilize o player de áudio abaixo para acessar o conteúdo.</p>
+                <div class="flex justify-center my-4">
+                    <audio controls class="w-full max-w-md">
+                        <source src="https://res.cloudinary.com/dz0dnuhx4/video/upload/v1748048309/batepapo_qgvdyh.mp3" type="audio/mpeg">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-12 py-4 border-t border-stone-300">
+            <div class="flex justify-center mb-2">
+                <img src="https://gist.github.com/samumove/5075e77801bedbe94e3b8b4252fa0eaf/raw/30bb0643d62b4850ac26d5f3d112391f5ecae985/logo.svg" alt="Logo do Seminário" class="h-12 mx-auto">
+            </div>
+            <p class="text-sm text-stone-500">&copy; 2024 Exploração Interativa do Gênero Sapiencial. Baseado no trabalho acadêmico.</p>
+        </footer>
+    </div>
+
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+        const tabContents = document.querySelectorAll('.tab-content');
+        const collapsibleTriggers = document.querySelectorAll('.collapsible-trigger');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.forEach(navLink => navLink.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                link.classList.add('active');
+                const activeTab = document.getElementById(link.dataset.tab);
+                if (activeTab) {
+                    activeTab.classList.add('active');
+                }
+            });
+        });
+
+        collapsibleTriggers.forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const content = trigger.nextElementSibling;
+                if (content && content.classList.contains('collapsible-content')) {
+                    trigger.classList.toggle('open');
+                    if (content.style.display === 'block') {
+                        content.style.display = 'none';
+                    } else {
+                        content.style.display = 'block';
+                    }
+                }
+            });
+        });
+
+        // Activate the first tab by default
+        if (navLinks.length > 0) {
+            navLinks[0].click();
+        }
+        
+        // Open the first collapsible content in each section by default for better initial view
+        document.querySelectorAll('.tab-content').forEach(tab => {
+            const firstCollapsible = tab.querySelector('.collapsible-trigger');
+            if (firstCollapsible) {
+                 // firstCollapsible.click(); // Uncomment to auto-open first collapsible in each tab
+            }
+        });
+    </script>
+</body>
+</html>
